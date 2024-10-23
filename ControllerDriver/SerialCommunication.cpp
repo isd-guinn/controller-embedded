@@ -44,6 +44,11 @@ uint8_t SerialInterface::getRxCounter() const
   return _rx_counter;
 }
 
+uint8_t SerialInterface::getTxCounter() const
+{
+  return _tx_counter;
+}
+
 uint8_t* SerialInterface::getTxBufferPtr() const
 {
   return _tx_buffer_ptr;
@@ -74,10 +79,10 @@ void SerialInterface::txSend()
 {
   for( int i = 0; i < _tx_packet_size; i++ )
   {
-    Serial.printf("%x ",_tx_buffer_ptr[i]);
+    // Serial.printf("%x ",_tx_buffer_ptr[i]);
     _serial_ptr->write(_tx_buffer_ptr[i]);
   }
-  Serial.println("|| Sent");
+  // Serial.println("|| Sent");
 }
 
 void SerialInterface::txClear( bool keepStartBit )

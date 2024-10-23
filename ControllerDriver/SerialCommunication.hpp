@@ -31,6 +31,7 @@ class SerialInterface
     uint8_t getTxPacketSize() const;
     uint8_t* getRxBufferPtr() const;
     uint8_t getRxCounter() const;
+    uint8_t getTxCounter() const;
     uint8_t* getTxBufferPtr() const;
 
     uint8_t rxPush();
